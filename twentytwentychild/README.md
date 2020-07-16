@@ -1,3 +1,0 @@
-# twentytwentychild
-
-WordPress Development Test
