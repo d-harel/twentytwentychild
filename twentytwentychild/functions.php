@@ -28,8 +28,10 @@ add_filter('show_admin_bar', 'ttc_show_admin_bar');
 require get_theme_file_path('/classes/class-ttc-product.php');
 require get_theme_file_path('/classes/class-ttc-product-fields.php');
 require get_theme_file_path('/classes/class-ttc-mobile.php');
+require get_theme_file_path('/classes/class-ttc-rest-api.php');
 
 // Register the products
 add_action('init', array('TTC_Products', 'register'));
-// Register the products
+
+// Register mobile settings
 add_action('init', array('TTC_Mobile', 'init'));

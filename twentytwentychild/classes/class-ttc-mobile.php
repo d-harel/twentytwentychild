@@ -1,5 +1,9 @@
 <?php
 if (!class_exists('TTC_Mobile')) {
+
+    /**
+     * Handles Mobile settings
+     */
     class TTC_Mobile
     {
 
@@ -11,6 +15,7 @@ if (!class_exists('TTC_Mobile')) {
             // Add meta tag 
             add_action('wp_head', array('TTC_Mobile', 'add_metatag'));
         }
+
         public static function register_settings($wp_customize)
         {
             // Header & Footer Background Color.
