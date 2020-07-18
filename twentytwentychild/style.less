@@ -7,12 +7,14 @@ Template: twentytwenty
 Version: 1.0.0
 Text Domain: twentytwentychild
 */
+
 h1.entry-title,
 h2.entry-title {
 	position: relative;
 	width: fit-content;
 	margin: 0 auto;
 }
+
 .sale {
 	color: white;
 	font-weight: 200;
@@ -40,13 +42,14 @@ h2.entry-title {
 }
 .gallery {
 	justify-content: center;
-}
-.gallery figcaption,
-.gallery .wp-caption-text {
-	display: none;
-}
-.gallery .gallery-item {
-	width: auto;
+
+	figcaption,
+	.wp-caption-text {
+		display: none;
+	}
+	.gallery-item {
+		width: auto;
+	}
 }
 .youtube,
 .youtube iframe {
@@ -63,53 +66,60 @@ h2.entry-title {
 	flex-wrap: wrap;
 	max-width: 700px;
 	margin: 20px auto;
-}
-.products-grid .product {
-	margin: 10px;
-	position: relative;
-	width: 200px;
-	text-align: center;
-}
-.products-grid .product a {
-	text-decoration: none;
-}
-.products-grid .product a img {
-	margin: 0 auto;
-}
-.products-grid .product a .sale {
-	font-size: 12px;
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	right: 10px;
-	top: -12px;
-}
-.products-grid .product a .product-title {
-	color: black;
-	margin-top: 10px;
-}
-@media screen and (max-width: 1220px) {
-	.sale {
-		font-size: 14px;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-		right: -45px;
+	.product {
+		margin: 10px;
+		position: relative;
+		width: 200px;
+		text-align: center;
+		a {
+			text-decoration: none;
+			img {
+				margin: 0 auto;
+			}
+			.sale {
+				font-size: 12px;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				right: 10px;
+				top: -12px;
+			}
+			.product-title {
+				color: black;
+				margin-top: 10px;
+			}
+		}
 	}
 }
-@media screen and (max-width: 700px) {
-	.sale {
-		font-size: 12px;
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
-		right: -35px;
+@media screen {
+	@media (max-width: 1220px) {
+		.sale {
+			font-size: 14px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			right: -45px;
+		}
 	}
-	.products-grid .product {
-		width: 150px;
-	}
-	.products-grid .product a .sale {
-		right: 2px;
-		top: 2px;
+	@media (max-width: 700px) {
+		.sale {
+			font-size: 12px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			right: -35px;
+		}
+
+		.products-grid {
+			.product {
+				width: 150px;
+				a {
+					.sale {
+						right: 2px;
+						top: 2px;
+					}
+				}
+			}
+		}
 	}
 }
