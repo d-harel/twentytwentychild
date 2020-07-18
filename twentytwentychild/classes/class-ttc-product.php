@@ -4,8 +4,6 @@
  * Handles products registration and access
  */
 
-use function PHPSTORM_META\map;
-
 if (!class_exists('TTC_Products')) {
     class TTC_Products
     {
@@ -220,7 +218,8 @@ if (!class_exists('TTC_Products')) {
             }
 
             $html .= '</div>';
-            return $html;
+
+            return apply_filters('ttc_pricing_display_html', $html);
         }
 
         /**
@@ -256,7 +255,7 @@ if (!class_exists('TTC_Products')) {
                 . '</div> 
              </div>';
 
-            return $html;
+            return apply_filters('ttc_product_box_html', $html);
         }
     }
 }

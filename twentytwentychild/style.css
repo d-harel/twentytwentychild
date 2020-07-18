@@ -94,10 +94,10 @@ h2.entry-title {
 .product-box .product-inner {
   position: relative;
   text-align: center;
-  padding: 20px;
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   margin: 0 auto;
+  padding: 35px 20px 20px;
 }
 .product-box .product-inner .sale {
   right: 0;
