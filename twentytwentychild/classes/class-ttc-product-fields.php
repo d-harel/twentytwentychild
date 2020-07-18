@@ -58,7 +58,7 @@ if (!class_exists('TTC_Product_Fields')) {
                     ),
                     array(
                         'label' => 'Gallery Images',
-                        'desc'  => 'Product gallery images. The page will display first 6 images.',
+                        'desc'  => 'Product gallery images.',
                         'name'    => TTC_THEME_PREFIX . 'gallery',
                         'type'  => 'gallery'
                     ),

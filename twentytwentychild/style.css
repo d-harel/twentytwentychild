@@ -28,15 +28,15 @@ h2.entry-title {
   z-index: 10;
   text-align: center;
 }
-.pricing {
-  font-size: 2em;
-  margin: 20px;
-}
 .stroke {
   text-decoration: line-through;
 }
 .singular .entry-header {
   padding-bottom: 3rem;
+}
+.singular .entry-header .pricing {
+  font-size: 2em;
+  margin: 20px;
 }
 .featured-media img {
   max-width: 400px;
@@ -90,6 +90,20 @@ h2.entry-title {
 .products-grid .product a .product-title {
   color: black;
   margin-top: 10px;
+}
+.product-box .product-inner {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+.product-box .product-inner .sale {
+  right: 0;
+}
+.product-box .product-inner img {
+  margin: 0 auto;
 }
 @media screen and (max-width: 1220px) {
   .sale {

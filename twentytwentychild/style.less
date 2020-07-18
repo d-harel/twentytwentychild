@@ -31,16 +31,18 @@ h2 {
 	z-index: 10;
 	text-align: center;
 }
-.pricing {
-	font-size: 2em;
-	margin: 20px;
-}
+
 .stroke {
 	text-decoration: line-through;
 }
 .singular {
 	.entry-header {
 		padding-bottom: 3rem;
+
+		.pricing {
+			font-size: 2em;
+			margin: 20px;
+		}
 	}
 }
 .featured-media {
@@ -96,6 +98,23 @@ h2 {
 				color: black;
 				margin-top: 10px;
 			}
+		}
+	}
+}
+
+.product-box {
+	.product-inner {
+		position: relative;
+		text-align: center;
+		padding: 20px;
+		width: 250px;
+		height: 250px;
+		margin: 0 auto;
+		.sale {
+			right: 0;
+		}
+		img {
+			margin: 0 auto;
 		}
 	}
 }

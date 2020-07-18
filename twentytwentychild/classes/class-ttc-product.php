@@ -4,6 +4,8 @@
  * Handles products registration and access
  */
 
+use function PHPSTORM_META\map;
+
 if (!class_exists('TTC_Products')) {
     class TTC_Products
     {
@@ -16,6 +18,8 @@ if (!class_exists('TTC_Products')) {
         {
             self::register_product_post_type();
             self::register_product_categories();
+
+            add_shortcode('ttc_product_box', array('TTC_Products', 'do_product_box_shortcode'));
         }
 
         /**
@@ -122,13 +126,13 @@ if (!class_exists('TTC_Products')) {
         /**
          * Returns sale badge HTML if the product is on sale
          *
-         * @param int $post_id
+         * @param int $product_id
          * @return string
          */
-        public static function display_sale_badge($post_id)
+        public static function display_sale_badge($product_id)
         {
             $on_sale = '';
-            $checkbox = get_post_meta($post_id, TTC_THEME_PREFIX . 'is-on-sale', true);
+            $checkbox = get_post_meta($product_id, TTC_THEME_PREFIX . 'is-on-sale', true);
             $color = twentytwenty_get_color_for_area('content', 'accent');
             if ($checkbox == 'yes') {
                 $on_sale = '<div class="sale" style="background:' . $color . '">' . __('Sale!', 'twentytwentychild') . '</div>';
@@ -194,6 +198,65 @@ if (!class_exists('TTC_Products')) {
             );
             $query = new WP_Query($args);
             return $query->posts;
+        }
+
+        /**
+         * Returns product pricing with regular + sale price 
+         *
+         * @param int $product_id
+         * @return string
+         */
+        public static function get_pricing_display($product_id)
+        {
+            $html = '<div class="pricing">';
+            $price = get_post_meta($product_id, TTC_THEME_PREFIX . 'price', true);
+            $sale_price = get_post_meta($product_id, TTC_THEME_PREFIX . 'sale-price', true);
+            $checkbox = get_post_meta($product_id, TTC_THEME_PREFIX . 'is-on-sale', true);
+            if ($checkbox == 'no') {
+                $html .= '<span class="regular-price">$' . $price . '</span>';
+            } else {
+                $html .= '<span class="regular-price stroke">$' . $price . '</span> <span class="sale-price">$'
+                    .  $sale_price . '</span>';
+            }
+
+            $html .= '</div>';
+            return $html;
+        }
+
+        /**
+         * Handles shortcode ttc_product_box
+         * Returns HTML for Product box
+         *
+         * @param array $atts       Attributes: 
+         *                          product_id  -   The product to display
+         *                          bg_color    -   The color for box background
+         * @return string
+         */
+        public static function do_product_box_shortcode($atts = array())
+        {
+            $params = shortcode_atts(array(
+                'product_id' => 0,
+                'bg_color' =>  twentytwenty_get_color_for_area('content', 'accent')
+            ), $atts);
+
+            if (!$params['product_id']) {
+                return '';
+            }
+            $badge = TTC_Products::display_sale_badge($params['product_id']);
+            $pricing = TTC_Products::get_pricing_display($params['product_id']);
+            $html =
+                '<div class="product-box">
+                <div class="product-inner" style="background:' . $params['bg_color'] . '">'
+                . $badge
+                . get_the_post_thumbnail($params['product_id'], 'thumbnail')
+                . '<div class="product-title">'
+                . get_the_title($params['product_id'])
+                . '</div>'
+                . $pricing
+                . '</div> 
+             </div>';
+
+            return $html;
         }
     }
 }
