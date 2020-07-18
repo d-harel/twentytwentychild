@@ -44,5 +44,7 @@ Appearance -> Customize -> Colors -> Mobile Address Bar Color
 
 Product categories endpoints which return product category data and products in this category.
 
+```
 -   /wp-json/wp/v2/ttc-category/<id>
 -   /wp-json/wp/v2/ttc-category/?slug=<slug>
+```
