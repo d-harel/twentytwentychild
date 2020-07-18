@@ -9,107 +9,110 @@ Text Domain: twentytwentychild
 */
 h1.entry-title,
 h2.entry-title {
-	position: relative;
-	width: fit-content;
-	margin: 0 auto;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
 }
 .sale {
-	color: white;
-	font-weight: 200;
-	font-size: 18px;
-	letter-spacing: initial;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	border-radius: 50%;
-	position: absolute;
-	right: -55px;
-	top: 0;
-	z-index: 10;
-	text-align: center;
+  color: white;
+  font-weight: 200;
+  font-size: 18px;
+  letter-spacing: initial;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: -55px;
+  top: 0;
+  z-index: 10;
+  text-align: center;
 }
 .pricing {
-	font-size: 2em;
-	margin: 20px;
+  font-size: 2em;
+  margin: 20px;
 }
 .stroke {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 .singular .entry-header {
-	padding-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+.featured-media img {
+  max-width: 400px;
 }
 .gallery {
-	justify-content: center;
+  justify-content: center;
 }
 .gallery figcaption,
 .gallery .wp-caption-text {
-	display: none;
+  display: none;
 }
 .gallery .gallery-item {
-	width: auto;
+  width: auto;
 }
 .youtube,
 .youtube iframe {
-	width: 580px;
-	height: 326px;
-	margin: 0 auto;
+  width: 580px;
+  height: 326px;
+  margin: 0 auto;
 }
 .related-products {
-	text-align: center;
+  text-align: center;
 }
 .products-grid {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	max-width: 700px;
-	margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 20px auto;
 }
 .products-grid .product {
-	margin: 10px;
-	position: relative;
-	width: 200px;
-	text-align: center;
+  margin: 10px;
+  position: relative;
+  width: 200px;
+  text-align: center;
 }
 .products-grid .product a {
-	text-decoration: none;
+  text-decoration: none;
 }
 .products-grid .product a img {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .products-grid .product a .sale {
-	font-size: 12px;
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	right: 10px;
-	top: -12px;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  right: 10px;
+  top: -12px;
 }
 .products-grid .product a .product-title {
-	color: black;
-	margin-top: 10px;
+  color: black;
+  margin-top: 10px;
 }
 @media screen and (max-width: 1220px) {
-	.sale {
-		font-size: 14px;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-		right: -45px;
-	}
+  .sale {
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    right: -45px;
+  }
 }
 @media screen and (max-width: 700px) {
-	.sale {
-		font-size: 12px;
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
-		right: -35px;
-	}
-	.products-grid .product {
-		width: 150px;
-	}
-	.products-grid .product a .sale {
-		right: 2px;
-		top: 2px;
-	}
+  .sale {
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    right: -35px;
+  }
+  .products-grid .product {
+    width: 150px;
+  }
+  .products-grid .product a .sale {
+    right: 2px;
+    top: 2px;
+  }
 }

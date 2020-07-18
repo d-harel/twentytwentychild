@@ -170,7 +170,7 @@ if (!class_exists('TTC_Products')) {
          */
         public static function get_related_products($product_id, $max_products = -1, $category_ids = false)
         {
-            if ($category_ids !== false) {
+            if ($category_ids === false) {
                 $categories = wp_get_post_terms($product_id, TTC_THEME_PREFIX . 'category');
                 if (!$categories || is_wp_error($categories)) {
                     return false;

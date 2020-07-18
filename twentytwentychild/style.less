@@ -8,13 +8,14 @@ Version: 1.0.0
 Text Domain: twentytwentychild
 */
 
-h1.entry-title,
-h2.entry-title {
-	position: relative;
-	width: fit-content;
-	margin: 0 auto;
+h1,
+h2 {
+	&.entry-title {
+		position: relative;
+		width: fit-content;
+		margin: 0 auto;
+	}
 }
-
 .sale {
 	color: white;
 	font-weight: 200;
@@ -37,8 +38,15 @@ h2.entry-title {
 .stroke {
 	text-decoration: line-through;
 }
-.singular .entry-header {
-	padding-bottom: 3rem;
+.singular {
+	.entry-header {
+		padding-bottom: 3rem;
+	}
+}
+.featured-media {
+	img {
+		max-width: 400px;
+	}
 }
 .gallery {
 	justify-content: center;
